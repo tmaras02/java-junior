@@ -39,6 +39,7 @@ Nakon izvršavanja ovih koraka sve funkcionalnosti aplikacije bi trebale biti do
 Napomena:
 
 Projekt koristi H2 in-memory bazu što znači da se podaci brišu pri ponovnom pokretanju aplikacije pa je svaki put potrebno pozvati:
+
 POST /init-data/
 
 Create order:
@@ -74,6 +75,7 @@ Request body (primjer):
 ```
 
 Napomene:
+
 Narudžbe nisu unaprijed određene pa je potrebno odraditi POST metodu za stvaranje narudžbe prije dohvaćanja ili sortiranja.
 Izračun ukupnog iznosa (totalPrice) se odvija automatski u backendu.
 
