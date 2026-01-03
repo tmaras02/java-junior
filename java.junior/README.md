@@ -101,19 +101,30 @@ GET /orders/sorted?descending=true
 
 GET /orders/sorted?descending=false
 
-Arhitektura
+Arhitektura:
+
 DatabaseInitializer – inicijalizacija baze
+
 Manager - poslovna logika
+
 Controller – HTTP logika
+
 DTO – prijenos podataka između slojeva aplikacije (baze podataka i korisničkog sučelja)
+
 Mapper – pretvaranje entiteta baze podataka u dto
+
 Repository – pristup bazi podataka
 
 Primijenjeni principi:
+
 OOP
+
 DRY
+
 KISS
+
 YAGNI
 
-Autor
+Autor:
+
 Rješenje je implementirano kao dio tehničkog zadatka za Abysalto.
