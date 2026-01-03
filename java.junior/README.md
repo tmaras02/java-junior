@@ -1,16 +1,15 @@
-Abysalto – Java Junior Tehnički Zadatak
-
+# Abysalto – Java Junior Tehnički Zadatak
 Ovo je rješenje tehničkog zadatka za Junior Java Developer poziciju.
 Aplikacija predstavlja jednostavan sustav za upravljanje narudžbama restorana, implementiran unutar postojećeg Spring Boot kostura.
 
-Aplikacija omogućuje:
+## Aplikacija omogućuje:
  - dodavanje novih narudžbi
  - pregled svih postojećih narudžbi
  - promjenu statusa narudžbe
  - automatski izračun ukupnog iznosa narudžbe
  - sortiranje narudžbi prema ukupnom iznosu
 
-Tehnologije:
+## Tehnologije:
  - Java 17+
  - Spring Boot
  - Spring Data JDBC
@@ -19,13 +18,12 @@ Tehnologije:
  - Swagger / OpenAPI
  - Maven
 
-Pokretanje aplikacije:
-
-Preduvjeti:
+## Pokretanje aplikacije:
+### Preduvjeti:
  - Java 17+
  - Maven
 
-Koraci:
+### Koraci:
 1. U terminalu unijeti: mvn spring-boot:run ili pokrenuti iz Spring Boot Dashboarda
 2. Otići na poveznicu http://localhost:8080/ping/pong u browseru radi testiranja
 3. Unijeti javne korisničke podatke za testiranje:
@@ -36,17 +34,17 @@ Koraci:
 
 Nakon izvršavanja ovih koraka sve funkcionalnosti aplikacije bi trebale biti dostupne.
 
-Napomena:
+### Napomena:
 
 Projekt koristi H2 in-memory bazu što znači da se podaci brišu pri ponovnom pokretanju aplikacije pa je svaki put potrebno pozvati:
 
 POST /init-data/
 
-Create order:
+## Create order:
 
 POST /orders
 
-Request body (primjer):
+## Request body (primjer):
 ```json
 {
   "order": {
@@ -74,16 +72,16 @@ Request body (primjer):
 }
 ```
 
-Napomene:
-
+## Napomene:
 Narudžbe nisu unaprijed određene pa je potrebno odraditi POST metodu za stvaranje narudžbe prije dohvaćanja ili sortiranja.
+
 Izračun ukupnog iznosa (totalPrice) se odvija automatski u backendu.
 
-Get all orders
+## Get all orders
 
 GET /orders
 
-Update order status
+## Update order status
 
 PATCH /orders/{id}/status
 ```json
@@ -92,46 +90,36 @@ PATCH /orders/{id}/status
 }
 ```
 
-Mogući statusi:
+## Mogući statusi:
  - WAITING_FOR_CONFIRMATION
  - PREPARING
  - DONE
 
-Moguće opcije plaćanja:
+## Moguće opcije plaćanja:
  - CASH
  - CARD_UPFRONT
  - CARD_ON_DELIVERY
 
-Sort orders by total price:
+## Sort orders by total price:
 
 GET /orders/sorted?descending=true
 
 GET /orders/sorted?descending=false
 
-Arhitektura:
+## Arhitektura:
+ - DatabaseInitializer – inicijalizacija baze
+ - Manager - poslovna logika
+ - Controller – HTTP logika
+ - DTO – prijenos podataka između slojeva aplikacije (baze podataka i korisničkog sučelja)
+ - Mapper – pretvaranje entiteta baze podataka u dto
+ - Repository – pristup bazi podataka
 
-DatabaseInitializer – inicijalizacija baze
+## Primijenjeni principi:
+- OOP
+- DRY
+- KISS
+- YAGNI
 
-Manager - poslovna logika
-
-Controller – HTTP logika
-
-DTO – prijenos podataka između slojeva aplikacije (baze podataka i korisničkog sučelja)
-
-Mapper – pretvaranje entiteta baze podataka u dto
-
-Repository – pristup bazi podataka
-
-Primijenjeni principi:
-
-OOP
-
-DRY
-
-KISS
-
-YAGNI
-
-Autor:
+## Autor:
 
 Rješenje je implementirano kao dio tehničkog zadatka za Abysalto.
