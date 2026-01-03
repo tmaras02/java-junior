@@ -37,10 +37,12 @@ Koraci:
 Nakon izvršavanja ovih koraka sve funkcionalnosti aplikacije bi trebale biti dostupne.
 
 Napomena:
+
 Projekt koristi H2 in-memory bazu što znači da se podaci brišu pri ponovnom pokretanju aplikacije pa je svaki put potrebno pozvati:
 POST /init-data/
 
 Create order:
+
 POST /orders
 
 Request body (primjer):
@@ -74,6 +76,7 @@ Narudžbe nisu unaprijed određene pa je potrebno odraditi POST metodu za stvara
 Izračun ukupnog iznosa (totalPrice) se odvija automatski u backendu.
 
 Get all orders
+
 GET /orders
 
 Update order status
@@ -83,17 +86,19 @@ PATCH /orders/{id}/status
 }
 
 Mogući statusi:
-WAITING_FOR_CONFIRMATION
-PREPARING
-DONE
+ - WAITING_FOR_CONFIRMATION
+ - PREPARING
+ - DONE
 
 Moguće opcije plaćanja:
-CASH
-CARD_UPFRONT
-CARD_ON_DELIVERY
+ - CASH
+ - CARD_UPFRONT
+ - CARD_ON_DELIVERY
 
-Sort orders by total price
+Sort orders by total price:
+
 GET /orders/sorted?descending=true
+
 GET /orders/sorted?descending=false
 
 Arhitektura
