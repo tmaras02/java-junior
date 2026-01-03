@@ -10,7 +10,6 @@ public interface OrderManager {
 
     Order createOrder(Order order, List<OrderItem> items);
     List<OrderItem> getOrderItems(Long orderId);
-    List<OrderItem> getOrderItemsByOrderIds(List<Long> orderIds);
     Iterable<Order> getAllOrders();
     List<Order> getAllOrdersSortedByTotalPrice(boolean descending);
     Order updateStatus(Long orderId, OrderStatus status);
