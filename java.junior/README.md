@@ -84,10 +84,13 @@ Get all orders
 GET /orders
 
 Update order status
+
 PATCH /orders/{id}/status
+```json
 {
   "status": "PREPARING"
 }
+```
 
 Mogući statusi:
  - WAITING_FOR_CONFIRMATION
