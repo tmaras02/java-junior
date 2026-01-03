@@ -46,30 +46,32 @@ Create order:
 POST /orders
 
 Request body (primjer):
+```json
 {
   "order": {
     "buyerId": 1,
     "orderStatus": "WAITING_FOR_CONFIRMATION",
-    "orderTime": "2026-01-03T16:20:00",
+    "orderTime": "2026-01-03T16:30:00",
     "paymentOption": "CASH",
     "deliveryAddressId": 1,
-    "contactNumber": "0910000001",
+    "contactNumber": "091000001",
     "currency": "EUR",
     "note": "Sa kukuruzom"
   },
   "items": [
     {
-      "name": "piletina u tijestu",
+      "name": "Piletina u tijestu",
       "quantity": 3,
       "price": 4.50
     },
     {
       "name": "Cockta",
       "quantity": 2,
-      "price": 2.00
+      "price": 2.0
     }
   ]
 }
+```
 
 Napomene:
 Narudžbe nisu unaprijed određene pa je potrebno odraditi POST metodu za stvaranje narudžbe prije dohvaćanja ili sortiranja.
