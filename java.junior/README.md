@@ -57,7 +57,7 @@ Request body (primjer):
   },
   "items": [
     {
-      "name": "",
+      "name": "piletina u tijestu",
       "quantity": 3,
       "price": 4.50
     },
