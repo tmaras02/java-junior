@@ -88,14 +88,6 @@ public class OrderManagerImpl implements OrderManager {
     }
 
     @Override
-    public List<OrderItem> getOrderItemsByOrderIds(List<Long> orderIds) {
-        if (orderIds == null || orderIds.isEmpty()) {
-            return List.of();
-        }
-        return orderItemRepository.findByOrderIdIn(orderIds);
-    }
-
-    @Override
     public Iterable<Order> getAllOrders() {
         return orderRepository.findAll();
     }
