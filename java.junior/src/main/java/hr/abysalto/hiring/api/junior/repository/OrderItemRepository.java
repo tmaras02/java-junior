@@ -11,14 +11,6 @@ import java.util.List;
 @Repository
 public interface OrderItemRepository extends CrudRepository<OrderItem, Long> {
 
-    @Query("SELECT * FROM order_item WHERE order_id = :orderId ORDER BY item_nr")
+    @Query("SELECT * FROM order_item WHERE order_id = :orderId ORDER BY order_id, item_nr")
     List<OrderItem> findByOrderId(@Param("orderId") Long orderId);
-
-    @Query("""
-        SELECT *
-        FROM order_item
-        WHERE order_id IN (:orderIds)
-        ORDER BY order_id, item_nr
-    """)
-    List<OrderItem> findByOrderIdIn(@Param("orderIds") List<Long> orderIds);
 }
